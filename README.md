@@ -7,9 +7,12 @@ De ontwikkeling van een web-based Reversi spel.
 Programmeertalen
 =======
 
-HTML.
-CSS.
-Javascript.
+HTML
+
+CSS
+
+Javascript
+
 ...
 
 (copyleft) 2014
