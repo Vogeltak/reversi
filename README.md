@@ -1,18 +1,14 @@
 Reversi
 =======
 
-Een TOM-project van Bas, Bob, Joep, Kyra, Max.
-De ontwikkeling van een web-based Reversi spel.
+A TOM-project by Bas, Bob, Joep, Kyra, Max.
 
-Programmeertalen
-=======
+<h2>Languages used:</h2>
 
 HTML
 
 CSS
 
 Javascript
-
-...
 
 (copyleft) 2014
