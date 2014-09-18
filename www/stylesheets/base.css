@@ -268,7 +268,7 @@
 /* #Misc
 ================================================== */
 	.remove-bottom { margin-bottom: 0 !important; }
-	.half-bottom { margin-bottom: 10px !important; }
-	.add-bottom { margin-bottom: 20px !important; }
-
-
+	.half-bottom { margin-bottom: 20px !important; }
+	.add-bottom { margin-bottom: 50px !important; }
+	.half-top { margin-top: 20px !important; }
+	.add-top { margin-top: 50px !important; }
