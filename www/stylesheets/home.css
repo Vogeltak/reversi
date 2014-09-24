@@ -30,6 +30,7 @@
 	background-color: #ddd;
 	float: left;
 	cursor: pointer;
+	border-radius: 50%;
 }
 
 	.box:hover {
