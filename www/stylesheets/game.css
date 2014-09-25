@@ -10,7 +10,9 @@
  */
 
 .header {
+	padding: 20px 0 20px 0;
 	text-align: center;
+	background-color: rgba(26, 188, 156, 0.2);
 }
 
  #board {
