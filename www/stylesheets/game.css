@@ -8,3 +8,29 @@
  *  09/25/2014
  *
  */
+
+.header {
+	text-align: center;
+}
+
+ #board {
+	height: 460px;
+}
+
+.box {
+	width: 12.5%;
+	height: 12.5%;
+	background-color: #ddd;
+	float: left;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+	.box:hover {	
+		-o-transform: scale(1.1);
+		-ms-transform: scale(1.1);	
+		-moz-transform: scale(1.1);	
+		-webkit-transform: scale(1.1);	
+		transform: scale(1.1);
+		background-color: #bbb;
+	}
