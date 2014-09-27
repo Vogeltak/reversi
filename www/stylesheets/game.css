@@ -27,7 +27,7 @@
 	height: 460px;
 }
 
-.box {
+.tile {
 	width: 12.5%;
 	height: 12.5%;
 	background-color: #ddd;
@@ -36,7 +36,7 @@
 	border-radius: 50%;
 }
 
-	.box:hover, .box:active {	
+	.tile:hover, .tile:active {	
 		-o-transform: scale(1.1);
 		-ms-transform: scale(1.1);	
 		-moz-transform: scale(1.1);
