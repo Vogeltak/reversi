@@ -36,7 +36,7 @@
 	border-radius: 50%;
 }
 
-	.box:hover {	
+	.box:hover, .box:active {	
 		-o-transform: scale(1.1);
 		-ms-transform: scale(1.1);	
 		-moz-transform: scale(1.1);
