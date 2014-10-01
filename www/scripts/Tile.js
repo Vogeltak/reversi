@@ -8,3 +8,8 @@
  *	09/25/2014
  *
  */
+
+ var Tile = function(index) {
+ 	Tile.prototype.index = index;
+ }
+ 
