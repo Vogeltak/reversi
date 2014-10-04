@@ -178,6 +178,16 @@
 		padding-right: 0 !important;
 		text-align: center; }
 
+	.button h1,
+	.button h2,
+	.button h3,
+	.button h4,
+	.button h5,
+	.button h6 {
+		color: #fff;
+		margin-bottom: 0;
+	}
+
 	/* Fix for odd Mozilla border & padding issues */
 	button::-moz-focus-inner,
 	input::-moz-focus-inner {
