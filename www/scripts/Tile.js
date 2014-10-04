@@ -25,6 +25,10 @@ function Tile(index) {
 		return document.getElementsByClassName(this.index)[0];
 	}
 
+	this.setNeutral = function() {
+		this.getTile().style.backgroundColor = '#ddd';
+	}
+
 	this.setGreen = function() {
 		this.getTile().style.backgroundColor = '#2ecc71';
 	}
