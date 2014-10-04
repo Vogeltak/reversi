@@ -31,8 +31,8 @@ function init() {
 		board[i] = new Tile(i);
 	}
 
-	board[27].setGreen();
-	board[28].setGreen();
-	board[35].setRed();
-	board[36].setRed();
+	board[27].setRed();
+	board[28].setRed();
+	board[35].setGreen();
+	board[36].setGreen();
 }
