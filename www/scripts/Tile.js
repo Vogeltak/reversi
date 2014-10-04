@@ -33,4 +33,8 @@ function Tile(index) {
 		this.getTile().style.backgroundColor = '#e74c3c';
 	}
 
+	this.handleEvent = function() {
+		this.getTile().style.backgroundColor = playerColor;
+	}
+
 }

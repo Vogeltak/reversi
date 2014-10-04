@@ -1,7 +1,7 @@
 /*
  *
  *	File: Game.js
- *	Description: Main file for setti#ng up and maintaining the game
+ *	Description: Main file for setting up and maintaining the game
  *
  *	Authors: Vogeltak, Pacmega, Joep359
  *
@@ -12,8 +12,22 @@
 document.getElementsByClassName('button')[0].onclick = init;
 
 var board = [];
+
+var playerColor = '#2ecc71';
+
+document.getElementsByClassName('human')[0].addEventListener('click', function() { playerColor = '#2ecc71'; });
+document.getElementsByClassName('computer')[0].addEventListener('click', function() { playerColor = '#e74c3c'; });
 	
 function init() {
+	// set visibility of board to 'visible'
+	document.getElementById('board').style.visibility = 'visible';
+
+	// set visibility of settings to 'visible'
+	document.getElementsByClassName('settings')[0].style.visibility = 'visible';
+
+	// set visibility start to 'hidden'
+	document.getElementsByClassName('button')[0].style.display = 'none';
+
 	// initialize empty board array
 	/*
 	 *	BOARD LAYOUT
@@ -31,8 +45,14 @@ function init() {
 		board[i] = new Tile(i);
 	}
 
+	// set default state
 	board[27].setRed();
 	board[28].setRed();
 	board[35].setGreen();
 	board[36].setGreen();
+
+	// set event listener for every tile
+	for (var j = 0; j < 64; j++) {
+		board[j].getTile().addEventListener('click', board[j], false);
+	}
 }
