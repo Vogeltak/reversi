@@ -10,6 +10,7 @@
  */
 
 document.getElementsByClassName('button')[0].onclick = init;
+document.getElementsByClassName('reset')[0].onclick = init;
 
 var board = [];
 
@@ -43,6 +44,8 @@ function init() {
 
 	for (var i = 0; i < 64; i++) {
 		board[i] = new Tile(i);
+		// set each tile color to neutral
+		board[i].getTile().style.backgroundColor = '#ddd';
 	}
 
 	// set default state

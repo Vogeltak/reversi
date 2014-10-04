@@ -86,3 +86,12 @@
 	.computer:hover {
 		background-color: #c0392b;
 	}
+
+.reset {
+	background-color: #e74c3c;
+	padding: 5px 0 5px 0;
+}
+
+	.reset:hover {
+		background-color: #c0392b;
+	}
