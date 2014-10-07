@@ -17,9 +17,17 @@
  * red-hover : #c0392b
  */
 
-function Tile(index) {
+function Tile(index, state) {
 	
 	this.index = index;
+
+	/*
+	 *	Tile states
+	 *	0 : neutral
+	 *	1 : green (human player)
+	 *	2 : red (computer player)
+	 */
+	this.state = state;
 
 	this.getTile = function() {
 		return document.getElementsByClassName(this.index)[0];
@@ -27,14 +35,17 @@ function Tile(index) {
 
 	this.setNeutral = function() {
 		this.getTile().style.backgroundColor = '#ddd';
+		this.state = 0;
 	}
 
 	this.setGreen = function() {
 		this.getTile().style.backgroundColor = '#2ecc71';
+		this.state = 1;
 	}
 
 	this.setRed = function() {
 		this.getTile().style.backgroundColor = '#e74c3c';
+		this.state = 2;
 	}
 
 	this.handleEvent = function() {

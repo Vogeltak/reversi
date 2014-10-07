@@ -25,10 +25,10 @@ function Board() {
 	 *	56 57 58 59 60 61 62 63
 	 */
 
-	this.board = [];
+	var board = [];
 
 	for (var i = 0; i < 64; i++) {
-		board[i] = new Tile(i);
+		board[i] = new Tile(i, 0);
 		// set each tile color to neutral
 		board[i].setNeutral();
 	}
@@ -42,6 +42,10 @@ function Board() {
 	// set event listener for every tile
 	for (var j = 0; j < 64; j++) {
 		board[j].getTile().addEventListener('click', board[j], false);
+	}
+
+	this.getTile = function(index) {
+		return board[index];
 	}
 
 }
