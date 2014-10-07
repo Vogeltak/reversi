@@ -21,10 +21,10 @@ document.getElementsByClassName('computer')[0].addEventListener('click', functio
 	
 function init() {
 	// set visibility of board to 'visible'
-	document.getElementById('board').style.visibility = 'visible';
+	document.getElementById('board').style.display = 'inline-block';
 
 	// set visibility of settings to 'visible'
-	document.getElementsByClassName('settings')[0].style.visibility = 'visible';
+	document.getElementById('settings').style.display = 'inline-block';
 
 	// set visibility start to 'hidden'
 	document.getElementsByClassName('button')[0].style.display = 'none';
