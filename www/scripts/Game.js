@@ -30,5 +30,4 @@ function init() {
 	document.getElementsByClassName('button')[0].style.display = 'none';
 	
 	board = new Board();
-	
 }

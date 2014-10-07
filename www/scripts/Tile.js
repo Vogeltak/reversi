@@ -52,4 +52,8 @@ function Tile(index, state) {
 		this.getTile().style.backgroundColor = playerColor;
 	}
 
+	this.getState = function() {
+		return this.state;
+	}
+
 }
