@@ -48,6 +48,10 @@ function Board() {
 		return board[index];
 	}
 
+	/*
+	 *	getTile methods to retrieve surrounding tiles
+	 */
+
 	this.getTileAbove = function(index) {
 		var indexAbove = index - 8;
 		if (index > 7)
