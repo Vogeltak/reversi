@@ -31,4 +31,7 @@ function init() {
 	document.getElementsByClassName('button')[0].style.display = 'none';
 	
 	board = new Board();
+
+	if (board.isValidMove(17, 0))
+		board.getTile(17).setGreen();
 }

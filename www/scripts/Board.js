@@ -143,14 +143,40 @@ function Board() {
 	 *  1 = red   (computer player)
 	 */
 	this.isValidMove = function(index, color) {
+		var valid = false;
 		if (color == 0) {
-			while (board[index].getTileUpperLeft().getState() == 2) {
-
+			for (var i = 0; i < 8; i++) {
+				var n = index;
+				if (this.getSurroundingTile(n, i).getState() == 2) {
+					console.log("Tile in direction " + i + " is red");
+					while (this.getSurroundingTile(n, i).getState() == 2) {
+						n = this.getSurroundingTile(n, i).getIndex();
+						if (this.getSurroundingTile(n, i).getState() == 1) {
+							valid = true;
+							console.log("Found tile of type green on index " + this.getSurroundingTile(n, i).getIndex());
+							break;
+						}
+					}
+				}
 			}
 		}
 		else {
-
+			for (var i = 0; i < 8; i++) {
+				var n = index;
+				if (this.getSurroundingTile(n, i).getState() == 1) {
+					console.log("Tile in direction " + i + " is green");
+					while (this.getSurroundingTile(n, i).getState() == 1) {
+						n = this.getSurroundingTile(n, i).getIndex();
+						if (this.getSurroundingTile(n, i).getState() == 2) {
+							valid = true;
+							console.log("Found tile of type red on index " + this.getSurroundingTile(n, i).getIndex());
+							break;
+						}
+					}
+				}
+			}
 		}
+		return valid;
 	}
 
 }
