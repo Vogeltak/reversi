@@ -80,4 +80,36 @@ function Board() {
 			return;
 	}
 
+	this.getTileUpperLeft = function(index) {
+		var indexRight = index - 9;
+		if (index > 8 && index != 8 && index != 16 && index != 24 && index != 32 && index != 40 && index != 48 && index != 56)
+			return board[indexRight];
+		else
+			return;
+	}
+
+	this.getTileUpperRight = function(index) {
+		var indexRight = index - 7;
+		if (index > 7 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47 && index != 55)
+			return board[indexRight];
+		else
+			return;
+	}
+
+	this.getTileBottomLeft = function(index) {
+		var indexRight = index + 7;
+		if (index < 56 && index != 0 && index != 8 && index != 16 && index != 24 && index != 32 && index != 40 && index != 48)
+			return board[indexRight];
+		else
+			return;
+	}
+
+	this.getTileBottomRight = function(index) {
+		var indexRight = index + 9;
+		if (index < 55 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47)
+			return board[indexRight];
+		else
+			return;
+	}
+
 }
