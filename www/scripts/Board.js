@@ -148,12 +148,10 @@ function Board() {
 			for (var i = 0; i < 8; i++) {
 				var n = index;
 				if (this.getSurroundingTile(n, i).getState() == 2) {
-					console.log("Tile in direction " + i + " is red");
 					while (this.getSurroundingTile(n, i).getState() == 2) {
 						n = this.getSurroundingTile(n, i).getIndex();
 						if (this.getSurroundingTile(n, i).getState() == 1) {
 							valid = true;
-							console.log("Found tile of type green on index " + this.getSurroundingTile(n, i).getIndex());
 							break;
 						}
 					}
@@ -164,12 +162,10 @@ function Board() {
 			for (var i = 0; i < 8; i++) {
 				var n = index;
 				if (this.getSurroundingTile(n, i).getState() == 1) {
-					console.log("Tile in direction " + i + " is green");
 					while (this.getSurroundingTile(n, i).getState() == 1) {
 						n = this.getSurroundingTile(n, i).getIndex();
 						if (this.getSurroundingTile(n, i).getState() == 2) {
 							valid = true;
-							console.log("Found tile of type red on index " + this.getSurroundingTile(n, i).getIndex());
 							break;
 						}
 					}

@@ -15,10 +15,10 @@ window.onload = init;
 
 var board;
 
-var playerColor = '#2ecc71';
+var playerColor = 0;
 
-document.getElementsByClassName('human')[0].addEventListener('click', function() { playerColor = '#2ecc71'; console.log('Set current color to ' +  playerColor); });
-document.getElementsByClassName('computer')[0].addEventListener('click', function() { playerColor = '#e74c3c'; console.log('Set current color to ' +  playerColor); });
+document.getElementsByClassName('human')[0].addEventListener('click', function() { playerColor = 0; console.log('Set current color to ' +  playerColor); });
+document.getElementsByClassName('computer')[0].addEventListener('click', function() { playerColor = 1; console.log('Set current color to ' +  playerColor); });
 	
 function init() {
 	// set display of board to 'inline-block'
@@ -31,7 +31,4 @@ function init() {
 	document.getElementsByClassName('button')[0].style.display = 'none';
 	
 	board = new Board();
-
-	if (board.isValidMove(17, 0))
-		board.getTile(17).setGreen();
 }

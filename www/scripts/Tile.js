@@ -49,13 +49,18 @@ function Tile(index, state) {
 	}
 
 	this.handleEvent = function() {
-		if (playerColor == '#2ecc71')
-			this.state = 1;
-		else if (playerColor == '#e74c3c')
-			this.state = 2;
+		if (board.isValidMove(this.index, playerColor)) {
+			if (playerColor == 0) {
+				this.setGreen();
+				console.log('Green tile placed on ' + this.getIndex());
+			}
+			else if (playerColor == 1) {
+				this.setRed();
+				console.log('Red tile placed on ' + this.getIndex());
+			}
+		}
 		else
-			this.state = 0;
-		this.getTile().style.backgroundColor = playerColor;
+			console.log('Invalid move! There can not be placed a tile on ' + this.getIndex());
 	}
 
 	this.getState = function() {
