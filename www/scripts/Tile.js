@@ -49,11 +49,21 @@ function Tile(index, state) {
 	}
 
 	this.handleEvent = function() {
+		if (playerColor == '#2ecc71')
+			this.state = 1;
+		else if (playerColor == '#e74c3c')
+			this.state = 2;
+		else
+			this.state = 0;
 		this.getTile().style.backgroundColor = playerColor;
 	}
 
 	this.getState = function() {
 		return this.state;
+	}
+
+	this.getIndex = function() {
+		return this.index;
 	}
 
 }

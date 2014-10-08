@@ -49,15 +49,36 @@ function Board() {
 	}
 
 	/*
-	 *	getTile methods to retrieve surrounding tiles
+	 *	overloaded getTile method to retrieve surrounding tiles
 	 */
 
-	this.getTileAbove = function(index) {
-		var indexAbove = index - 8;
-		if (index > 7)
-			return board[indexAbove];
-		else
-			return;
+	 /*  Directions
+	  *  0 = upperleft	
+	  *  1 = above
+	  *  2 = upperright
+	  *  3 = left
+	  *  4 = right
+	  *  5 = bottomleft
+	  *  6 = down
+	  *  7 = bottomright
+	  */
+
+	this.getTile = function(index, direction) {
+		if (direction == 0) {
+			var indexRight = index - 9;
+			if (index > 8 && index != 8 && index != 16 && index != 24 && index != 32 && index != 40 && index != 48 && index != 56)
+				return board[indexRight];
+			else
+				return;
+		}
+		if (direction == 1) {
+			var indexAbove = index - 8;
+			if (index > 7)
+				return board[indexAbove];
+			else
+				return;
+		}
+
 	}
 
 	this.getTileUnder = function(index) {
@@ -85,11 +106,7 @@ function Board() {
 	}
 
 	this.getTileUpperLeft = function(index) {
-		var indexRight = index - 9;
-		if (index > 8 && index != 8 && index != 16 && index != 24 && index != 32 && index != 40 && index != 48 && index != 56)
-			return board[indexRight];
-		else
-			return;
+		
 	}
 
 	this.getTileUpperRight = function(index) {
@@ -114,6 +131,21 @@ function Board() {
 			return board[indexRight];
 		else
 			return;
+	}
+
+	/*  Color
+	 *  0 = green (human player)
+	 *  1 = red   (computer player)
+	 */
+	this.isValidMove = function(index, color) {
+		if (color == 0) {
+			while (board[index].getTileUpperLeft().getState() == 2) {
+
+			}
+		}
+		else {
+
+		}
 	}
 
 }
