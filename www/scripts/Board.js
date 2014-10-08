@@ -59,11 +59,13 @@ function Board() {
 	  *  3 = left
 	  *  4 = right
 	  *  5 = bottomleft
-	  *  6 = down
+	  *  6 = underneath
 	  *  7 = bottomright
 	  */
 
-	this.getTile = function(index, direction) {
+	this.getSurroundingTile = function(index, direction) {
+
+		// upper left
 		if (direction == 0) {
 			var indexRight = index - 9;
 			if (index > 8 && index != 8 && index != 16 && index != 24 && index != 32 && index != 40 && index != 48 && index != 56)
@@ -71,6 +73,8 @@ function Board() {
 			else
 				return;
 		}
+
+		// above
 		if (direction == 1) {
 			var indexAbove = index - 8;
 			if (index > 7)
@@ -79,58 +83,59 @@ function Board() {
 				return;
 		}
 
-	}
+		// upper right
+		if (direction == 2) {
+			var indexRight = index - 7;
+			if (index > 7 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47 && index != 55)
+				return board[indexRight];
+			else
+				return;
+		}
 
-	this.getTileUnder = function(index) {
-		var indexUnder = index + 8
-		if (index < 56)
-			return board[indexUnder];
-		else
-			return;
-	}
+		// left
+		if (direction == 3) {
+			var indexLeft = index - 1;
+			if (index > 0)
+				return board[indexLeft];
+			else
+				return;
+		}
 
-	this.getTileLeft = function(index) {
-		var indexLeft = index - 1;
-		if (index > 0)
-			return board[indexLeft];
-		else
-			return;
-	}
+		// right
+		if (direction == 4) {
+			var indexRight = index + 1;
+			if (index < 63)
+				return board[indexRight];
+			else
+				return;
+		}
 
-	this.getTileRight = function(index) {
-		var indexRight = index + 1;
-		if (index < 63)
-			return board[indexRight];
-		else
-			return;
-	}
+		// bottom left
+		if (direction == 5) {
+			var indexRight = index + 7;
+			if (index < 56 && index != 0 && index != 8 && index != 16 && index != 24 && index != 32 && index != 40 && index != 48)
+				return board[indexRight];
+			else
+				return;
+		}
 
-	this.getTileUpperLeft = function(index) {
-		
-	}
+		// underneath
+		if (direction == 6) {
+			var indexUnder = index + 8
+			if (index < 56)
+				return board[indexUnder];
+			else
+				return;
+		}
 
-	this.getTileUpperRight = function(index) {
-		var indexRight = index - 7;
-		if (index > 7 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47 && index != 55)
-			return board[indexRight];
-		else
-			return;
-	}
-
-	this.getTileBottomLeft = function(index) {
-		var indexRight = index + 7;
-		if (index < 56 && index != 0 && index != 8 && index != 16 && index != 24 && index != 32 && index != 40 && index != 48)
-			return board[indexRight];
-		else
-			return;
-	}
-
-	this.getTileBottomRight = function(index) {
-		var indexRight = index + 9;
-		if (index < 55 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47)
-			return board[indexRight];
-		else
-			return;
+		// bottom right
+		if (direction == 7) {
+			var indexRight = index + 9;
+			if (index < 55 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47)
+				return board[indexRight];
+			else
+				return;
+		}
 	}
 
 	/*  Color

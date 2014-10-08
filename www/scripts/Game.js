@@ -32,17 +32,3 @@ function init() {
 	
 	board = new Board();
 }
-
-	/*  Directions
-	 *	0 = upperleft
-	 *	1 = up
-	 *  2 = upperright
-	 *  3 = left
-	 *  4 = right
-	 *  5 = bottomleft
-	 *  6 = down
-	 *  7 = bottomright
-	 */
-	function flipTiles(direction) {
-		
-	}
