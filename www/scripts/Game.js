@@ -10,7 +10,7 @@
  */
 
 document.getElementsByClassName('button')[0].onclick = init;
-document.getElementsByClassName('reset')[0].onclick = init;
+document.getElementsByClassName('reset')[0].onclick = function() { window.location.reload(false); init(); };
 window.onload = init;
 
 var board;
