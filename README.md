@@ -11,4 +11,4 @@ CSS
 
 Javascript
 
-(copyleft) 2014
+(<strong>ɔ</strong>) 2014
