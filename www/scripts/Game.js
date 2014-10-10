@@ -15,6 +15,10 @@ window.onload = init;
 
 var board;
 
+/*	
+ *  0 = green
+ *  1 = red
+ */
 var playerColor = 0;
 
 document.getElementsByClassName('human')[0].addEventListener('click', function() { playerColor = 0; console.log('Set current color to ' +  playerColor); });

@@ -147,12 +147,14 @@ function Board() {
 		if (color == 0) {
 			for (var i = 0; i < 8; i++) {
 				var n = index;
-				if (this.getSurroundingTile(n, i).getState() == 2) {
-					while (this.getSurroundingTile(n, i).getState() == 2) {
-						n = this.getSurroundingTile(n, i).getIndex();
-						if (this.getSurroundingTile(n, i).getState() == 1) {
-							valid = true;
-							break;
+				if (this.getSurroundingTile(n, i) != undefined) {
+					if (this.getSurroundingTile(n, i).getState() == 2) {
+						while (this.getSurroundingTile(n, i).getState() == 2) {
+							n = this.getSurroundingTile(n, i).getIndex();
+							if (this.getSurroundingTile(n, i).getState() == 1) {
+								valid = true;
+								break;
+							}
 						}
 					}
 				}
@@ -161,12 +163,14 @@ function Board() {
 		else {
 			for (var i = 0; i < 8; i++) {
 				var n = index;
-				if (this.getSurroundingTile(n, i).getState() == 1) {
-					while (this.getSurroundingTile(n, i).getState() == 1) {
-						n = this.getSurroundingTile(n, i).getIndex();
-						if (this.getSurroundingTile(n, i).getState() == 2) {
-							valid = true;
-							break;
+				if (this.getSurroundingTile(n, i) != undefined) {
+					if (this.getSurroundingTile(n, i).getState() == 1) {
+						while (this.getSurroundingTile(n, i).getState() == 1) {
+							n = this.getSurroundingTile(n, i).getIndex();
+							if (this.getSurroundingTile(n, i).getState() == 2) {
+								valid = true;
+								break;
+							}
 						}
 					}
 				}
