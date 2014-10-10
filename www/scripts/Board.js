@@ -144,7 +144,7 @@ function Board() {
 	 */
 	this.isValidMove = function(index, color) {
 		var valid = false;
-		if (color == 0) {
+		if (color == 0 && this.getTile(index).getState() == 0) {
 			for (var i = 0; i < 8; i++) {
 				var n = index;
 				if (this.getSurroundingTile(n, i) != undefined) {
@@ -162,7 +162,7 @@ function Board() {
 				}
 			}
 		}
-		else {
+		else if (this.getTile(index).getState() == 0) {
 			for (var i = 0; i < 8; i++) {
 				var n = index;
 				if (this.getSurroundingTile(n, i) != undefined) {
