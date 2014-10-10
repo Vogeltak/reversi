@@ -36,3 +36,38 @@ function init() {
 	
 	board = new Board();
 }
+
+function flipTiles(index) {
+	if (playerColor == 0) {
+		for (var i = 0; i < 8; i++) {
+			var tile = board.getSurroundingTile(index, i);
+			if (board.isValidDirection(index, i)) {
+				if (tile.getState() == 2) {
+					while (tile.getState() == 2) {
+						tile.setGreen();
+						console.log("Flipped " + tile.getIndex() + " to " + playerColor);
+						tile = board.getSurroundingTile(tile.getIndex(), i);
+						if (tile.getState() == 1)
+							break;
+					}
+				}
+			}
+		}
+	}
+	if (playerColor == 1) {
+		for (var i = 0; i < 8; i++) {
+			var tile = board.getSurroundingTile(index, i);
+			if (board.isValidDirection(index, i)) {
+				if (tile.getState() == 1) {
+					while (tile.getState() == 1) {
+						tile.setRed();
+						console.log("Flipped " + tile.getIndex() + " to " + playerColor);
+						tile = board.getSurroundingTile(tile.getIndex(), i);
+						if (tile.getState() == 2)
+							break;
+					}
+				}
+			}
+		}
+	}
+}

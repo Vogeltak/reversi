@@ -67,9 +67,9 @@ function Board() {
 
 		// upper left
 		if (direction == 0) {
-			var indexRight = index - 9;
+			var indexUpperLeft = index - 9;
 			if (index > 8 && index != 8 && index != 16 && index != 24 && index != 32 && index != 40 && index != 48 && index != 56)
-				return board[indexRight];
+				return board[indexUpperLeft];
 			else
 				return;
 		}
@@ -85,9 +85,9 @@ function Board() {
 
 		// upper right
 		if (direction == 2) {
-			var indexRight = index - 7;
+			var indexUpperRight = index - 7;
 			if (index > 7 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47 && index != 55)
-				return board[indexRight];
+				return board[indexUpperRight];
 			else
 				return;
 		}
@@ -112,9 +112,9 @@ function Board() {
 
 		// bottom left
 		if (direction == 5) {
-			var indexRight = index + 7;
+			var indexBottomLeft = index + 7;
 			if (index < 56 && index != 0 && index != 8 && index != 16 && index != 24 && index != 32 && index != 40 && index != 48)
-				return board[indexRight];
+				return board[indexBottomLeft];
 			else
 				return;
 		}
@@ -130,9 +130,9 @@ function Board() {
 
 		// bottom right
 		if (direction == 7) {
-			var indexRight = index + 9;
+			var indexBottomRight = index + 9;
 			if (index < 55 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47)
-				return board[indexRight];
+				return board[indexBottomRight];
 			else
 				return;
 		}
@@ -149,11 +149,13 @@ function Board() {
 				var n = index;
 				if (this.getSurroundingTile(n, i) != undefined) {
 					if (this.getSurroundingTile(n, i).getState() == 2) {
-						while (this.getSurroundingTile(n, i).getState() == 2) {
+						while (this.getSurroundingTile(n, i) != undefined && this.getSurroundingTile(n, i).getState() == 2) {
 							n = this.getSurroundingTile(n, i).getIndex();
-							if (this.getSurroundingTile(n, i).getState() == 1) {
-								valid = true;
-								break;
+							if (this.getSurroundingTile(n, i) != undefined) {
+								if (this.getSurroundingTile(n, i).getState() == 1) {
+									valid = true;
+									break;
+								}
 							}
 						}
 					}
@@ -165,9 +167,48 @@ function Board() {
 				var n = index;
 				if (this.getSurroundingTile(n, i) != undefined) {
 					if (this.getSurroundingTile(n, i).getState() == 1) {
-						while (this.getSurroundingTile(n, i).getState() == 1) {
+						while (this.getSurroundingTile(n, i) != undefined && this.getSurroundingTile(n, i).getState() == 1) {
 							n = this.getSurroundingTile(n, i).getIndex();
-							if (this.getSurroundingTile(n, i).getState() == 2) {
+							if (this.getSurroundingTile(n, i) != undefined) {
+								if (this.getSurroundingTile(n, i).getState() == 2) {
+									valid = true;
+									break;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return valid;
+	}
+
+	this.isValidDirection = function(index, direction) {
+		var valid = false;
+		if (playerColor == 0) {
+			var tile = this.getSurroundingTile(index, direction);
+			if (tile != undefined) {
+				if (tile.getState() == 2) {
+					while (this.getSurroundingTile(tile.getIndex(), direction) != undefined && tile.getState() == 2) {
+						if (this.getSurroundingTile(tile.getIndex(), direction) != undefined) {
+							tile = this.getSurroundingTile(tile.getIndex(), direction);
+							if (tile.getState() == 1) {
+								valid = true;
+								break;
+							}
+						}
+					}
+				}
+			}
+		}
+		if (playerColor == 1) {
+			var tile = this.getSurroundingTile(index, direction);
+			if (tile != undefined) {
+				if (tile.getState() == 1) {
+					while (this.getSurroundingTile(tile.getIndex(), direction) != undefined && tile.getState() == 1) {
+						if (this.getSurroundingTile(tile.getIndex(), direction) != undefined) {
+							tile = this.getSurroundingTile(tile.getIndex(), direction);
+							if (tile.getState() == 2) {
 								valid = true;
 								break;
 							}

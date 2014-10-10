@@ -58,6 +58,7 @@ function Tile(index, state) {
 				this.setRed();
 				console.log('Placed 1 at ' + this.getIndex());
 			}
+			flipTiles(this.index);
 		}
 		else
 			console.log('Unable to place tile on ' + this.getIndex() + "! Invalid move!");
