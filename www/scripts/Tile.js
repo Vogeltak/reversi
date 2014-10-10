@@ -52,15 +52,15 @@ function Tile(index, state) {
 		if (board.isValidMove(this.index, playerColor)) {
 			if (playerColor == 0) {
 				this.setGreen();
-				console.log('Green tile placed on ' + this.getIndex());
+				console.log('Placed 0 at ' + this.getIndex());
 			}
 			else if (playerColor == 1) {
 				this.setRed();
-				console.log('Red tile placed on ' + this.getIndex());
+				console.log('Placed 1 at ' + this.getIndex());
 			}
 		}
 		else
-			console.log('Invalid move! There can not be placed a tile on ' + this.getIndex());
+			console.log('Unable to place tile on ' + this.getIndex() + "! Invalid move!");
 	}
 
 	this.getState = function() {

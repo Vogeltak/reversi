@@ -21,8 +21,8 @@ var board;
  */
 var playerColor = 0;
 
-document.getElementsByClassName('human')[0].addEventListener('click', function() { playerColor = 0; console.log('Set current color to ' +  playerColor); });
-document.getElementsByClassName('computer')[0].addEventListener('click', function() { playerColor = 1; console.log('Set current color to ' +  playerColor); });
+document.getElementsByClassName('human')[0].addEventListener('click', function() { playerColor = 0; console.log('Set color to ' +  playerColor); });
+document.getElementsByClassName('computer')[0].addEventListener('click', function() { playerColor = 1; console.log('Set color to ' +  playerColor); });
 	
 function init() {
 	// set display of board to 'inline-block'
