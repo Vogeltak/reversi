@@ -95,7 +95,7 @@ function Board() {
 		// left
 		if (direction == 3) {
 			var indexLeft = index - 1;
-			if (index > 0)
+			if (index > 0 && index != 0 && index != 8 && index != 16 && index != 24 && index != 32 && index != 40 && index != 48 && index != 56)
 				return board[indexLeft];
 			else
 				return;
