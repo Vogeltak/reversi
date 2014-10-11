@@ -44,6 +44,20 @@ function flipTiles(index) {
 			if (board.isValidDirection(index, i)) {
 				if (tile.getState() == 2) {
 					while (tile.getState() == 2) {
+						var tileClass = tile.getTile();
+						// Flips tile
+						if (tileClass.style.animationName !== 'flip' && tileClass.style.webkitAnimationName !== 'flip') {
+							tileClass.style.animationName = 'flip';
+							tileClass.style.webkitAnimationName = 'flip';
+							tileClass.style.animationDuration = '0.4s';
+							tileClass.style.webkitAnimationDuration = '0.4s';
+
+							setTimeout(function() {
+								tileClass.style.animationName = '';
+								tileClass.style.webkitAnimationName = '';
+							}, 400);
+						}
+
 						tile.setGreen();
 						console.log("Flipped " + tile.getIndex() + " to " + playerColor);
 						tile = board.getSurroundingTile(tile.getIndex(), i);
@@ -60,6 +74,19 @@ function flipTiles(index) {
 			if (board.isValidDirection(index, i)) {
 				if (tile.getState() == 1) {
 					while (tile.getState() == 1) {
+						var tileClass = tile.getTile();
+						// Flips tile
+						if (tileClass.style.animationName !== 'flip' && tileClass.style.webkitAnimationName !== 'flip') {
+							tileClass.style.animationName = 'flip';
+							tileClass.style.webkitAnimationName = 'flip';
+							tileClass.style.animationDuration = '0.4s';
+							tileClass.style.webkitAnimationDuration = '0.4s';
+
+							setTimeout(function() {
+								tileClass.style.animationName = '';
+								tileClass.style.webkitAnimationName = '';
+							}, 400);
+						}
 						tile.setRed();
 						console.log("Flipped " + tile.getIndex() + " to " + playerColor);
 						tile = board.getSurroundingTile(tile.getIndex(), i);
