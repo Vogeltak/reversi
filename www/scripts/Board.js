@@ -86,7 +86,7 @@ function Board() {
 		// upper right
 		if (direction == 2) {
 			var indexUpperRight = index - 7;
-			if (index > 7 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47 && index != 55)
+			if (index > 7 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47 && index != 55 && index != 63)
 				return board[indexUpperRight];
 			else
 				return;
@@ -104,7 +104,7 @@ function Board() {
 		// right
 		if (direction == 4) {
 			var indexRight = index + 1;
-			if (index < 63)
+			if (index < 63 && index != 7 && index != 15 && index != 23 && index != 31 && index != 39 && index != 47 && index != 55 && index != 63)
 				return board[indexRight];
 			else
 				return;
