@@ -59,15 +59,7 @@ function Tile(index, state) {
 				console.log('Placed 1 at ' + this.getIndex());
 			}
 			flipTiles(this.index);
-			// switch to other player
-			if (playerColor == 0) {
-				playerColor = 1;
-				console.log('Switched player to 1');
-			}
-			else if (playerColor == 1) {
-				playerColor = 0;
-				console.log('Switched player to 0');
-			}
+			togglePlayers();
 		}
 		else
 			console.log('Unable to place tile on ' + this.getIndex() + "! Invalid move!");

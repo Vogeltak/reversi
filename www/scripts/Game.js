@@ -20,9 +20,6 @@ var board;
  *  1 = red
  */
 var playerColor = 0;
-
-document.getElementsByClassName('human')[0].addEventListener('click', function() { playerColor = 0; console.log('Set color to ' +  playerColor); });
-document.getElementsByClassName('computer')[0].addEventListener('click', function() { playerColor = 1; console.log('Set color to ' +  playerColor); });
 	
 function init() {
 	// set display of board to 'inline-block'
@@ -33,8 +30,31 @@ function init() {
 
 	// set display start to 'none'
 	document.getElementsByClassName('button')[0].style.display = 'none';
+
+	// Hide the red player icon under 'Current Player', because current player is green
+	document.getElementsByClassName('computer')[0].style.display = 'none';
 	
 	board = new Board();
+}
+
+function togglePlayers() {
+	var green = document.getElementsByClassName('human')[0];
+	var red = document.getElementsByClassName('computer')[0];
+	// switch to other player
+	if (playerColor == 0) {
+		playerColor = 1;
+		console.log('Switched player to 1');
+		// display current player and hide the other one
+		green.style.display = 'none';
+		red.style.display = 'block';
+	}
+	else if (playerColor == 1) {
+		playerColor = 0;
+		console.log('Switched player to 0');
+		// display current player and hide the other one
+		red.style.display = 'none';
+		green.style.display = 'block';
+	}
 }
 
 function flipTiles(index) {

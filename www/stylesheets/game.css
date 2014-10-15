@@ -106,36 +106,18 @@
 .colorpicker {
 	width: 40px;
 	height: 40px;
-	border-radius: 20px;
-	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
-	cursor: pointer;
+	border-radius: 20px;
 }
-
-	.colorpicker:hover {
-		-o-transform: scale(1.1);
-		-ms-transform: scale(1.1);	
-		-moz-transform: scale(1.1);
-		-webkit-transform: scale(1.1);
-		transform: scale(1.1);
-	}
 
 .human {
 	background-color: #2ecc71;
 }
 
-	.human:hover {
-		background-color: #27ae60;
-	}
-
 .computer {
 	background-color: #e74c3c;
 }
-
-	.computer:hover {
-		background-color: #c0392b;
-	}
 
 .reset {
 	background-color: #e74c3c;
