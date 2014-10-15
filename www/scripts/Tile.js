@@ -53,10 +53,14 @@ function Tile(index, state) {
 			if (playerColor == 0) {
 				this.setGreen();
 				console.log('Placed 0 at ' + this.getIndex());
+				playerColor = 1;
+				console.log('Switched player to 1');
 			}
 			else if (playerColor == 1) {
 				this.setRed();
 				console.log('Placed 1 at ' + this.getIndex());
+				playerColor = 0;
+				console.log('Switched player to 0');
 			}
 			flipTiles(this.index);
 		}
