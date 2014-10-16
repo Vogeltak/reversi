@@ -33,6 +33,6 @@ Logger.prototype.clear = function() {
 			log.style.animationName = '';
 			log.style.webkitAnimationName = '';
 			log.innerHTML = "";
-		}, 1200	)
+		}, 1200);
 	}
 }
