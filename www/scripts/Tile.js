@@ -63,8 +63,13 @@ function Tile(index, state) {
 			flipTiles(this.index);
 			togglePlayers();
 		}
-		else
-			console.log('Unable to place tile on ' + this.getIndex() + "! Invalid move!");
+		else {
+			console.log('Unable to place tile on ' + this.getIndex() + '! Invalid move!');
+			if (playerColor == 0)
+				logger.log('Unable to place a <span class="green">green</span> tile on ' + this.getIndex() + '! Invalid move!');
+			else if (playerColor == 1)
+				logger.log('Unable to place a <span class="red">red</span> tile on ' + this.getIndex() + '! Invalid move!');
+		}
 	}
 
 	this.getState = function() {

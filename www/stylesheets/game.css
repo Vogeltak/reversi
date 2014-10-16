@@ -129,7 +129,7 @@
 	}
 
 #logs {
-	padding: 5px 0 20px 0;
+	padding: 30px 0 0 0;
 	text-align: center;
 }
 
@@ -144,4 +144,24 @@
 
 #log .red {
 	color: #c0392b;
+}
+
+@keyframes fadeout {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes fadeout {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
 }
