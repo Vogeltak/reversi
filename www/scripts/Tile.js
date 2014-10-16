@@ -53,10 +53,12 @@ function Tile(index, state) {
 			if (playerColor == 0) {
 				this.setGreen();
 				console.log('Placed 0 at ' + this.getIndex());
+				logger.log('Succesfully placed a <span class="green">green</span> tile on ' + this.getIndex());
 			}
 			else if (playerColor == 1) {
 				this.setRed();
 				console.log('Placed 1 at ' + this.getIndex());
+				logger.log('Succesfully placed a <span class="red">red</span> tile on ' + this.getIndex());
 			}
 			flipTiles(this.index);
 			togglePlayers();

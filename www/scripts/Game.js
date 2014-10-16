@@ -14,6 +14,7 @@ document.getElementsByClassName('reset')[0].onclick = function() { window.locati
 window.onload = init;
 
 var board;
+var logger;
 
 /*	
  *  0 = green
@@ -35,6 +36,10 @@ function init() {
 	document.getElementsByClassName('computer')[0].style.display = 'none';
 	
 	board = new Board();
+	logger = new Logger();
+
+	// display welcome message
+	logger.log('<span class="green">Welcome</span> to a new reversi game!');
 }
 
 function togglePlayers() {

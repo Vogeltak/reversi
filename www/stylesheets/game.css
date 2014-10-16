@@ -127,3 +127,21 @@
 	.reset:hover {
 		background-color: #c0392b;
 	}
+
+#logs {
+	padding: 5px 0 20px 0;
+	text-align: center;
+}
+
+#log {
+	color: #555;
+	font-size: 22px;
+}
+
+#log .green {
+	color: #27ae60;
+}
+
+#log .red {
+	color: #c0392b;
+}

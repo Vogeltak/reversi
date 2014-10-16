@@ -8,3 +8,17 @@
  *	09/25/2014
  *
  */
+
+var log;
+
+function Logger () {
+    log = document.getElementById('log');
+}
+
+Logger.prototype.log = function(htmltext) {
+    log.innerHTML = htmltext;
+}
+
+Logger.prototype.clear = function() {
+	log.innerHTML = "";
+}
