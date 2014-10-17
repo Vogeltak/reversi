@@ -34,17 +34,26 @@ function Tile(index, state) {
 	}
 
 	this.setNeutral = function() {
-		this.getTile().style.backgroundColor = '#ddd';
+		var tile = this.getTile();
+		setTimeout(function() {
+			tile.style.backgroundColor = '#ddd';
+		}, 200);
 		this.state = 0;
 	}
 
 	this.setGreen = function() {
-		this.getTile().style.backgroundColor = '#2ecc71';
+		var tile = this.getTile();
+		setTimeout(function() {
+			tile.style.backgroundColor = '#2ecc71';
+		}, 200);
 		this.state = 1;
 	}
 
 	this.setRed = function() {
-		this.getTile().style.backgroundColor = '#e74c3c';
+		var tile = this.getTile();
+		setTimeout(function() {
+			tile.style.backgroundColor = '#e74c3c';
+		}, 200);
 		this.state = 2;
 	}
 
