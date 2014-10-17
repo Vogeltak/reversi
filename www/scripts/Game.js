@@ -123,3 +123,5 @@ function flipTiles(index) {
 		}
 	}
 }
+
+// TODO: check if game ended, who won and who lost, calculate scores
