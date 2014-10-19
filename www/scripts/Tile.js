@@ -79,6 +79,9 @@ function Tile(index, state) {
 				logger.log('Game has ended!');
 				finalStuff();
 			}
+
+			// TODO: check if there are valid moves for the current player
+			//		 if not, switch playerColor and INFORM the player on it.
 		}
 		else {
 			console.log('Unable to place tile on ' + this.getIndex() + '! Invalid move!');
