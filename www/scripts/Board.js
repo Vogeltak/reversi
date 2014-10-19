@@ -27,6 +27,8 @@ function Board() {
 
 	var board = [];
 
+	this.tilesPlaced = 4;
+
 	for (var i = 0; i < 64; i++) {
 		board[i] = new Tile(i, 0);
 		// set each tile color to neutral

@@ -40,6 +40,7 @@ function init() {
 
 	// display welcome message
 	logger.log('<span class="green">Welcome</span> to a new reversi game!');
+
 }
 
 function togglePlayers() {
@@ -124,6 +125,44 @@ function flipTiles(index) {
 	}
 }
 
-// TODO: check if game ended
-// TODO: check who won and who lost
-// TODO: calculate scores
+// TODO: check if game is ended without all tiles being placed
+function isGameEnded() {
+	if (board.tilesPlaced == 64)
+		return true;
+	else
+		return false;
+}
+
+function finalStuff() {
+	var score0 = getScore(1);
+	var score1 = getScore(2);
+	console.log('0 has a score of ' + score0);
+	console.log('1 has a score of ' + score1);
+	logger.log('Score <span class="green">Green</span> : ' + score0 + ' <br> Score <span class="red">Red</span> : ' + score1);
+
+	if (score0 > score1) {
+		console.log('0 has won the game!');
+		logger.log('<br><span class="green">Green</span> has <strong>won</strong>! <br> Congratulations!');
+	}
+	else if (score1 > score0) {
+		console.log('1 has won the game!');
+		logger.log('<br><span class="red">Red</span> has <strong>won</strong>! <br> Congratulations!');
+	}
+}
+
+function getScore(player) {
+	var score = 0;
+	for (var i = 0; i < 64; i++)
+		if (board.getTile(i).getState() == player)
+			score++;
+	return score;
+}
+
+// TEMP
+function setFinalState() {
+	for (var i = 0; i < 32; i++)
+		board.getTile(i).setGreen();
+	for (var j = 32; j < 63; j++)
+		board.getTile(j).setRed();
+	board.tilesPlaced = 63;
+}

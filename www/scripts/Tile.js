@@ -69,8 +69,16 @@ function Tile(index, state) {
 				console.log('Placed 1 at ' + this.getIndex());
 				logger.log('Succesfully placed a <span class="red">red</span> tile on ' + this.getIndex());
 			}
+			board.tilesPlaced++;
+			console.log(board.tilesPlaced + ' tiles are currently placed on the board.');
 			flipTiles(this.index);
 			togglePlayers();
+
+			if (isGameEnded()) {
+				console.log('Game has ended!');
+				logger.log('Game has ended!');
+				finalStuff();
+			}
 		}
 		else {
 			console.log('Unable to place tile on ' + this.getIndex() + '! Invalid move!');

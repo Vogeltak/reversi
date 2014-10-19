@@ -133,16 +133,16 @@
 	text-align: center;
 }
 
-#log {
+#logs p {
 	color: #555;
 	font-size: 22px;
 }
 
-#log .green {
+#logs p .green {
 	color: #27ae60;
 }
 
-#log .red {
+#logs p .red {
 	color: #c0392b;
 }
 
