@@ -134,6 +134,10 @@ function isGameEnded() {
 }
 
 function finalStuff() {
+	// Remove eventListeners
+	for (var i = 0; i < 64; i++)
+		board.getTile(i).getTile().removeEventListener('click', board.getTile(i), false);
+	
 	var score0 = getScore(1);
 	var score1 = getScore(2);
 	console.log('0 has a score of ' + score0);
