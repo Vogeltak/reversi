@@ -187,3 +187,17 @@ function setFinalState() {
 		board.getTile(j).setRed();
 	board.tilesPlaced = 63;
 }
+
+// TEMP
+function setImpossibleState() {
+	for (var i = 0; i < 64; i++) {
+		if (i == 1 || i == 50)
+			board.getTile(i).setGreen();
+		else if (i == 56 || i == 58)
+			board.getTile(i).setNeutral();
+		else
+			board.getTile(i).setRed();
+	}
+	board.tilesPlaced = 63;
+	playerColor = 1;
+}
