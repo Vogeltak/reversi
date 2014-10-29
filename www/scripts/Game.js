@@ -40,9 +40,6 @@ function init() {
 	// set display of settings to 'inline-block'
 	document.getElementById('settings').style.display = 'inline-block';
 
-	// set display start to 'none'
-	document.getElementsByClassName('button')[0].style.display = 'none';
-
 	// Hide the red player icon under 'Current Player', because current player is green
 	document.getElementsByClassName('computer')[0].style.display = 'none';
 	
