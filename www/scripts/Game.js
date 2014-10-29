@@ -129,8 +129,25 @@ function flipTiles(index) {
 function isGameEnded() {
 	if (board.tilesPlaced == 64)
 		return true;
-	else
-		return false;
+	else {
+		if (!hasPossibleMove(0) && !hasPossibleMove(1))
+			return true;
+		else
+			return false;
+	}
+}
+
+function hasPossibleMove(player) {
+	var hasPossibleMove = false;
+	for (var i = 0; i < 64; i++) {
+		if (board.getTile(i).getState() == 0) {
+			if (board.isValidMove(i, player)) {
+				hasPossibleMove = true;
+				break;
+			}
+		}
+	}
+	return hasPossibleMove;
 }
 
 function finalStuff() {
