@@ -198,6 +198,6 @@ function setImpossibleState() {
 		else
 			board.getTile(i).setRed();
 	}
-	board.tilesPlaced = 63;
+	board.tilesPlaced = 62;
 	playerColor = 1;
 }
