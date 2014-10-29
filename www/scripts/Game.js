@@ -9,6 +9,17 @@
  *
  */
 
+ /*
+  *
+  *	 TODO: 
+  *    Implement an AI
+  *      - easy mode : AI will play the move which gets the most tiles flipped in that turn
+  *      - hard mode : AI will search for best move with predicted future moves in mind 
+  *
+  *    Both Pacmega and Joep359 can work on this, if they want to. Vogeltak will guide them.
+  *
+  */
+
 document.getElementsByClassName('button')[0].onclick = init;
 document.getElementsByClassName('reset')[0].onclick = function() { window.location.reload(false); init(); };
 window.onload = init;

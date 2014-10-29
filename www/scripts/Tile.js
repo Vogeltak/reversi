@@ -80,8 +80,8 @@ function Tile(index, state) {
 				finalStuff();
 			}
 
-			// TODO: check if there are valid moves for the current player
-			//		 if not, switch playerColor and INFORM the player on it.
+			//  Check if there are valid moves for the current player
+			//	if not, switch playerColor and INFORM the player on it.
 			if (!hasPossibleMove(playerColor) && !isGameEnded()) {
 				console.log('Switched to other player because there were no moves possible with the other player');
 				if (playerColor == 0) {
