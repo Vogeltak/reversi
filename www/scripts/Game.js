@@ -63,6 +63,22 @@ function togglePlayers() {
 	}
 }
 
+function setPlayer(player) {
+	var green = document.getElementsByClassName('human')[0];
+	var red = document.getElementsByClassName('computer')[0];
+	console.log('Switched to player ' + player);
+	if (player == 0) {
+		playerColor = 0;
+		green.style.display = 'block';
+		red.style.display = 'none';
+	}
+	else if (player == 1) {
+		playerColor = 1;
+		green.style.display = 'none';
+		red.style.display = 'block';
+	}
+}
+
 function flipTiles(index) {
 	if (playerColor == 0) {
 		for (var i = 0; i < 8; i++) {
@@ -125,7 +141,6 @@ function flipTiles(index) {
 	}
 }
 
-// TODO: check if game is ended without all tiles being placed
 function isGameEnded() {
 	if (board.tilesPlaced == 64)
 		return true;
@@ -200,4 +215,18 @@ function setImpossibleState() {
 	}
 	board.tilesPlaced = 62;
 	playerColor = 1;
+}
+
+// TEMP
+function setImpossibleStateForGreen() {
+	for (var i = 32; i < 64; i++) {
+		if (i == 32 || i == 42)
+			board.getTile(i).setGreen();
+		else if (i == 34)
+			board.getTile(i).setNeutral();
+		else
+			board.getTile(i).setRed();
+		setPlayer(1);
+		board.tilesPlaced = 31;
+	}
 }

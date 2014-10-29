@@ -61,7 +61,7 @@
 .tile {
 	width: 12.5%;
 	height: 12.5%;
-	background-color: #ddd;
+	background-color: #dcdcdc;
 	float: left;
 	cursor: pointer;
 	border-radius: 50%;
