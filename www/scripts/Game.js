@@ -9,6 +9,17 @@
  *
  */
 
+ /*
+  *
+  *	 TODO: 
+  *    Implement an AI
+  *      - easy mode : AI will play the move which gets the most tiles flipped in that turn
+  *      - hard mode : AI will search for best move with predicted future moves in mind 
+  *
+  *    Both Pacmega and Joep359 can work on this, if they want to. Vogeltak will guide them.
+  *
+  */
+
 document.getElementsByClassName('button')[0].onclick = init;
 document.getElementsByClassName('reset')[0].onclick = function() { window.location.reload(false); init(); };
 window.onload = init;
@@ -28,9 +39,6 @@ function init() {
 
 	// set display of settings to 'inline-block'
 	document.getElementById('settings').style.display = 'inline-block';
-
-	// set display start to 'none'
-	document.getElementsByClassName('button')[0].style.display = 'none';
 
 	// Hide the red player icon under 'Current Player', because current player is green
 	document.getElementsByClassName('computer')[0].style.display = 'none';
@@ -60,6 +68,22 @@ function togglePlayers() {
 		// display current player and hide the other one
 		red.style.display = 'none';
 		green.style.display = 'block';
+	}
+}
+
+function setPlayer(player) {
+	var green = document.getElementsByClassName('human')[0];
+	var red = document.getElementsByClassName('computer')[0];
+	console.log('Switched to player ' + player);
+	if (player == 0) {
+		playerColor = 0;
+		green.style.display = 'block';
+		red.style.display = 'none';
+	}
+	else if (player == 1) {
+		playerColor = 1;
+		green.style.display = 'none';
+		red.style.display = 'block';
 	}
 }
 
@@ -125,12 +149,28 @@ function flipTiles(index) {
 	}
 }
 
-// TODO: check if game is ended without all tiles being placed
 function isGameEnded() {
 	if (board.tilesPlaced == 64)
 		return true;
-	else
-		return false;
+	else {
+		if (!hasPossibleMove(0) && !hasPossibleMove(1))
+			return true;
+		else
+			return false;
+	}
+}
+
+function hasPossibleMove(player) {
+	var hasPossibleMove = false;
+	for (var i = 0; i < 64; i++) {
+		if (board.getTile(i).getState() == 0) {
+			if (board.isValidMove(i, player)) {
+				hasPossibleMove = true;
+				break;
+			}
+		}
+	}
+	return hasPossibleMove;
 }
 
 function finalStuff() {
@@ -169,4 +209,32 @@ function setFinalState() {
 	for (var j = 32; j < 63; j++)
 		board.getTile(j).setRed();
 	board.tilesPlaced = 63;
+}
+
+// TEMP
+function setImpossibleState() {
+	for (var i = 0; i < 64; i++) {
+		if (i == 1 || i == 50)
+			board.getTile(i).setGreen();
+		else if (i == 56 || i == 58)
+			board.getTile(i).setNeutral();
+		else
+			board.getTile(i).setRed();
+	}
+	board.tilesPlaced = 62;
+	playerColor = 1;
+}
+
+// TEMP
+function setImpossibleStateForGreen() {
+	for (var i = 32; i < 64; i++) {
+		if (i == 32 || i == 42)
+			board.getTile(i).setGreen();
+		else if (i == 34)
+			board.getTile(i).setNeutral();
+		else
+			board.getTile(i).setRed();
+		setPlayer(1);
+		board.tilesPlaced = 31;
+	}
 }

@@ -79,6 +79,20 @@ function Tile(index, state) {
 				logger.log('Game has ended!');
 				finalStuff();
 			}
+
+			//  Check if there are valid moves for the current player
+			//	if not, switch playerColor and INFORM the player on it.
+			if (!hasPossibleMove(playerColor) && !isGameEnded()) {
+				console.log('Switched to other player because there were no moves possible with the other player');
+				if (playerColor == 0) {
+					setPlayer(1);
+					logger.log('Current player switched to <span class="red">red</span> because there were no possible moves for <span class="green">green</span>.');
+				}
+				else if (playerColor == 1) {
+					setPlayer(0);
+					logger.log('Current player switched to <span class="green">green</span> because there were no possible moves for <span class="red">red</span>.');
+				}
+			}
 		}
 		else {
 			console.log('Unable to place tile on ' + this.getIndex() + '! Invalid move!');
